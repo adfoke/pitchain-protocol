@@ -106,10 +106,18 @@ def header_fields(header_hex: str) -> tuple[str, str]:
 def op_return_payloads(tx_hex: str) -> list[str]:
     b = unh(tx_hex)
     i = 4
+    segwit = b[i] == 0x00 and b[i + 1] == 0x01  # BIP144 marker+flag
+    if segwit:
+        i += 2
     vin = b[i]; i += 1
     for _ in range(vin):
         i += 36
         sl = b[i]; i += 1 + sl + 4
+    if segwit:
+        for _ in range(vin):
+            items = b[i]; i += 1
+            for _w in range(items):
+                i += 1 + b[i]
     out: list[str] = []
     vout = b[i]; i += 1
     for _ in range(vout):

@@ -1,6 +1,6 @@
 {
   "name": "pitchain-vectors",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "protocol": "pitchain/1",
   "spec": "protocol/SPEC.md (Pitchain Existence Proof Protocol v1.0)",
   "families": {
@@ -10,5 +10,6 @@
     "proof/negative.json": "篡改负例：expect = fail-<class>，class ∈ {data,tree,anchor,inclusion,script}",
     "spv/material.json": "主网区块 965880 真实链上材料（header/branch/txid/position），2026-09-07 捕获冻结"
   },
-  "provenance": "SPV 材料为真实主网数据；pp-full-script 的 anchorTxHex 为合成最小合法序列化（链上该 txid 的脚本不含此载荷，仅 pp-full 内部自洽）"
+  "provenance": "SPV 材料为真实主网数据；pp-full-script 的 anchorTxHex 为真签名 segwit 见证交易（BIP144 序列化，验证器必须走 marker/witness 解析分支），链上该 txid 的实际脚本不含此载荷，仅向量内部自洽",
+  "revision": "vectors 1.1.0 — script 向量升级为真见证交易；SPEC §7.6 补 BIP144 解析规则"
 }

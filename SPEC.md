@@ -159,10 +159,14 @@ Bitcoin tx merkle: start `cur = reverse(txid bytes)`; for each level `d`, siblin
 prior 11 blocks; MAY be recomputed from `height`), plus the strongest level actually
 checked: `crypto` / `+script` / `+inclusion`.
 
-**7.6 minimal tx/script parser**: version(4) vin(1B) [outpoint(36) scriptsig(1B+skip)
-seq(4)]… vout(1B) [value(8) script(1B+skip)]… — OP_RETURN scripts start `0x6a`;
-pushes `0x01–0x4b` inline or `0x4c + len`. (Vectors keep all counts < 76; larger
-canonical encodings are for issuer tooling and do not affect verification.)
+**7.6 minimal tx/script parser (BIP144-aware)**: version(4) [marker 0x00 flag 0x01
+if segwit] vin(1B) [outpoint(36) scriptsig(1B+skip) seq(4)]… [per-input witness:
+items(1B) each (1B+len)]… if segwit — vout(1B) [value(8) script(1B+skip)]… locktime(4).
+OP_RETURN scripts start `0x6a`; push data follows canonical single-push (`0x01–0x4b`
+inline) or `0x4c + len` (76–255). (Vectors keep all counts < 76; larger canonical
+encodings are issuer-tooling concerns, not verifier ones.) Real anchors are witness
+transactions; a parser without the marker/witness branch MUST fail `pass-full`
+vectors — this branch is REQUIRED, not optional.
 
 ## 8. Chain selection caveat
 
