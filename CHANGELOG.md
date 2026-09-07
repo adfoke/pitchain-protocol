@@ -5,6 +5,13 @@ nav_order: 3
 
 # Changelog
 
+## v1.0.2 — 2026-09-07
+
+- Correction to v1.0.1's §7.6: BIP144 field order is …outputs → **witness** →
+  locktime. Verifiers do NOT skip a witness section before outputs (v1.0.1 text
+  was wrong; caught when both reference parsers failed the real-witness vector —
+  the vectors and service e2e earning their keep).
+
 ## v1.0.1 — 2026-09-07
 
 - SPEC §7.6 rewritten BIP144-aware: verifiers MUST handle the segwit marker/witness

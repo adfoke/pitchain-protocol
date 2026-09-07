@@ -108,16 +108,12 @@ def op_return_payloads(tx_hex: str) -> list[str]:
     i = 4
     segwit = b[i] == 0x00 and b[i + 1] == 0x01  # BIP144 marker+flag
     if segwit:
-        i += 2
+        i += 2  # 字段序：…vin ins vout outs witness locktime——outs 先于 witness
     vin = b[i]; i += 1
     for _ in range(vin):
         i += 36
         sl = b[i]; i += 1 + sl + 4
-    if segwit:
-        for _ in range(vin):
-            items = b[i]; i += 1
-            for _w in range(items):
-                i += 1 + b[i]
+    # BIP144：witness 段在 outputs 之后——本函数读完 outputs 即止，无需跳段
     out: list[str] = []
     vout = b[i]; i += 1
     for _ in range(vout):
