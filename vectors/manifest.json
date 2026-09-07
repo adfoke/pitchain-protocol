@@ -1,0 +1,14 @@
+{
+  "name": "pitchain-vectors",
+  "version": "1.0.0",
+  "protocol": "pitchain/1",
+  "spec": "protocol/SPEC.md (Pitchain Existence Proof Protocol v1.0)",
+  "families": {
+    "tree/n*.json": "聚合树：items(dataHash/leaf) + root + proofs[index/path/root]，n∈{1,2,3,4,5,7,8,9,16,17,33,100}",
+    "anchor/payload.json": "45B 锚定载荷编解码与往返",
+    "proof/positive.json": "端到端证明：expect ∈ {pass-crypto, pass-spv, pass-full}（语义见 SPEC §11.1）",
+    "proof/negative.json": "篡改负例：expect = fail-<class>，class ∈ {data,tree,anchor,inclusion,script}",
+    "spv/material.json": "主网区块 965880 真实链上材料（header/branch/txid/position），2026-09-07 捕获冻结"
+  },
+  "provenance": "SPV 材料为真实主网数据；pp-full-script 的 anchorTxHex 为合成最小合法序列化（链上该 txid 的脚本不含此载荷，仅 pp-full 内部自洽）"
+}

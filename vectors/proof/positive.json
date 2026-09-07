@@ -1,0 +1,198 @@
+{
+  "id": "proof-positive",
+  "cases": [
+    {
+      "id": "pp-crypto-1leaf",
+      "description": "单叶树、离线密码学完备（无链上数据）",
+      "expect": "pass-crypto",
+      "proof": {
+        "@context": "https://w3id.org/pitchain/v1",
+        "type": "PitchainExistenceProof",
+        "version": 1,
+        "evidence": {
+          "hash": "05bde784fcf484970ee3af1115b10e94c840197c7237fb500835ab7cb1297156",
+          "hashAlg": "sha256"
+        },
+        "leaf": {
+          "index": 0,
+          "paddingRule": "dup-last-v1"
+        },
+        "tree": {
+          "leafCount": 1,
+          "path": [],
+          "root": "a7e4873034ace43cbb8a33c05c6f37828617b585a313d86a4a271f9aa6bad4f5"
+        },
+        "batch": {
+          "id": "1875614552399872"
+        },
+        "anchor": {
+          "network": "signet",
+          "txid": "",
+          "vout": 0,
+          "payload": "50434831010006a9dc8b21a000a7e4873034ace43cbb8a33c05c6f37828617b585a313d86a4a271f9aa6bad4f5"
+        }
+      },
+      "context": {
+        "dataSrc": "pitchain-vector-item-0"
+      }
+    },
+    {
+      "id": "pp-crypto-17leaf-pad",
+      "description": "17 叶 dup-last 填充，index 13 路径",
+      "expect": "pass-crypto",
+      "proof": {
+        "@context": "https://w3id.org/pitchain/v1",
+        "type": "PitchainExistenceProof",
+        "version": 1,
+        "evidence": {
+          "hash": "69a5e0526c1e1d051147f265a1d1e5be9238067b1ae5f4593257c54a0cc010f1",
+          "hashAlg": "sha256"
+        },
+        "leaf": {
+          "index": 13,
+          "paddingRule": "dup-last-v1"
+        },
+        "tree": {
+          "leafCount": 17,
+          "path": [
+            "d3a8fa2f11120f6961b6f2f8f37e411f2f01d67365126ff80221da9faf186d5b",
+            "9672e610a9e3d748cb001b63577f9cfc5c4570cdd555f602e3f586b3f427899a",
+            "b3c8f61788b316d442227765e6bfdcd8d16dc1d8b20546e65cee35a9cf5a5bc7",
+            "178468f0cb0896039204cffcb8f8c2b42c073017a04064df734d9640f6c5a406",
+            "5c17572bdf572fa56af90008d33cb3c8696756bf3e4d7cabd952ffa11816b1cd"
+          ],
+          "root": "1c954801c66130820e72b11fc3574412d0b54daf50a09c18ff6c69aa661b20de"
+        },
+        "batch": {
+          "id": "1842348033048576"
+        },
+        "anchor": {
+          "network": "bitcoin",
+          "txid": "abababababababababababababababababababababababababababababababab",
+          "vout": 0,
+          "payload": "504348310100068b9b141000001c954801c66130820e72b11fc3574412d0b54daf50a09c18ff6c69aa661b20de"
+        }
+      },
+      "context": {}
+    },
+    {
+      "id": "pp-spv-mainnet",
+      "description": "主网真实区块 SPV（headerHex 冻结于 context）",
+      "expect": "pass-spv",
+      "proof": {
+        "@context": "https://w3id.org/pitchain/v1",
+        "type": "PitchainExistenceProof",
+        "version": 1,
+        "evidence": {
+          "hash": "3e83cbe574af30319c67933892c3665dc1d7a06a264f5fc90795a35020159165",
+          "hashAlg": "sha256"
+        },
+        "leaf": {
+          "index": 2,
+          "paddingRule": "dup-last-v1"
+        },
+        "tree": {
+          "leafCount": 5,
+          "path": [
+            "8d0de64fdb451767e8b8cc6a0ddfa242831751615bd736cc7fadf35996d36c4b",
+            "dd8890d07c51a56782c876585e5ad389ac664f74db7c70277aff52dc501a4bc3",
+            "8a9a8a0737caa6816062b034962bd94fc909df184143523bdab1e9ccaca87a09"
+          ],
+          "root": "0cfedbcc8f46d736876df6ca98f610b8e5ca9ba0f2aa87dbb02b2c6ed953996a"
+        },
+        "batch": {
+          "id": "1842348032000003"
+        },
+        "anchor": {
+          "network": "bitcoin",
+          "txid": "e560ebd25a7c2da66c4b822c82974f7e0f71c74a0dff7af31d6f351e1c38ff63",
+          "vout": 0,
+          "payload": "504348310100068b9b140000030cfedbcc8f46d736876df6ca98f610b8e5ca9ba0f2aa87dbb02b2c6ed953996a",
+          "blockHash": "00000000000000000000406e575ea93bfef7336982976f59b231a7e1c839b5a6",
+          "height": 965880,
+          "merkleBranch": [
+            "d5f62b0e70658d1d6196c3b1bb183e12d1a26d2036d3e0be385ecf9a391f44dd",
+            "45688344e26a2d7ea4aa848ed1b1eab9a995ac7b4b132fe2b287bae1ea126c93",
+            "d5f5d3d4cfba7736f3178dd1a48a3b972957d41008125cb39e05b01935818105",
+            "79dc33ca3dd04fd4fef3bcd2ec823ad382ff0c2410b8b03ce34d872238d26f02",
+            "dfca007b72ea53b150aaf01fd47cebd00470bdb9e171af867381604e4e6896c7",
+            "0efa185a9cf24b2688352d6fbda787e26ed308b7aff6793d8df3e145196268fa",
+            "fe84a54392bc86381632117fd694f2ebae58360551fc5f6e8ba77789c6e7990a",
+            "ed1de01e2c9fa32250b4e85f2019b7fbf80244e47d9d3075fb661b805121aa59",
+            "a10a199cee8b45fb1d85bfa8e7a98c50a25893fde0d1807b05c4f76642d1ab99",
+            "6aa23abc21bc701ee65885d03538a2b7dda235a69e0c099aac8ea6654e51c9f8",
+            "575a508c61ae5f927ad5428251948c3c52880a036ebee6cf51136add34c1caff",
+            "78b6b9f58c2587e48f97e8bcb94ae439f4d5745c9ef458942b14b09aabcf6d39",
+            "036c905840998c93c55fa7d9c588a594ce89435ff4f7c267dd2ad1be211ff2ed"
+          ],
+          "position": 1,
+          "confirmationsAtIssue": 999999,
+          "mtp": "2026-09-07T04:41:36.141Z"
+        }
+      },
+      "context": {
+        "headerHex": "0000002226ebcdd3c73b3e441fa22ec5d847214ab64299dcd748000000000000000000001e95bdef30921382746b34b01e8cdd1d2a80d2ab847f53b1639b116d691bcf2668389e6a5e3502179d376b15"
+      }
+    },
+    {
+      "id": "pp-full-script",
+      "description": "SPV + 锚定交易 OP_RETURN 内容绑定（合成 tx，序列化合法）",
+      "expect": "pass-full",
+      "proof": {
+        "@context": "https://w3id.org/pitchain/v1",
+        "type": "PitchainExistenceProof",
+        "version": 1,
+        "evidence": {
+          "hash": "3e83cbe574af30319c67933892c3665dc1d7a06a264f5fc90795a35020159165",
+          "hashAlg": "sha256"
+        },
+        "leaf": {
+          "index": 2,
+          "paddingRule": "dup-last-v1"
+        },
+        "tree": {
+          "leafCount": 5,
+          "path": [
+            "8d0de64fdb451767e8b8cc6a0ddfa242831751615bd736cc7fadf35996d36c4b",
+            "dd8890d07c51a56782c876585e5ad389ac664f74db7c70277aff52dc501a4bc3",
+            "8a9a8a0737caa6816062b034962bd94fc909df184143523bdab1e9ccaca87a09"
+          ],
+          "root": "0cfedbcc8f46d736876df6ca98f610b8e5ca9ba0f2aa87dbb02b2c6ed953996a"
+        },
+        "batch": {
+          "id": "1842348032000003"
+        },
+        "anchor": {
+          "network": "bitcoin",
+          "txid": "e560ebd25a7c2da66c4b822c82974f7e0f71c74a0dff7af31d6f351e1c38ff63",
+          "vout": 0,
+          "payload": "504348310100068b9b140000030cfedbcc8f46d736876df6ca98f610b8e5ca9ba0f2aa87dbb02b2c6ed953996a",
+          "blockHash": "00000000000000000000406e575ea93bfef7336982976f59b231a7e1c839b5a6",
+          "height": 965880,
+          "merkleBranch": [
+            "d5f62b0e70658d1d6196c3b1bb183e12d1a26d2036d3e0be385ecf9a391f44dd",
+            "45688344e26a2d7ea4aa848ed1b1eab9a995ac7b4b132fe2b287bae1ea126c93",
+            "d5f5d3d4cfba7736f3178dd1a48a3b972957d41008125cb39e05b01935818105",
+            "79dc33ca3dd04fd4fef3bcd2ec823ad382ff0c2410b8b03ce34d872238d26f02",
+            "dfca007b72ea53b150aaf01fd47cebd00470bdb9e171af867381604e4e6896c7",
+            "0efa185a9cf24b2688352d6fbda787e26ed308b7aff6793d8df3e145196268fa",
+            "fe84a54392bc86381632117fd694f2ebae58360551fc5f6e8ba77789c6e7990a",
+            "ed1de01e2c9fa32250b4e85f2019b7fbf80244e47d9d3075fb661b805121aa59",
+            "a10a199cee8b45fb1d85bfa8e7a98c50a25893fde0d1807b05c4f76642d1ab99",
+            "6aa23abc21bc701ee65885d03538a2b7dda235a69e0c099aac8ea6654e51c9f8",
+            "575a508c61ae5f927ad5428251948c3c52880a036ebee6cf51136add34c1caff",
+            "78b6b9f58c2587e48f97e8bcb94ae439f4d5745c9ef458942b14b09aabcf6d39",
+            "036c905840998c93c55fa7d9c588a594ce89435ff4f7c267dd2ad1be211ff2ed"
+          ],
+          "position": 1,
+          "confirmationsAtIssue": 999999,
+          "mtp": "2026-09-07T04:41:36.141Z"
+        }
+      },
+      "context": {
+        "headerHex": "0000002226ebcdd3c73b3e441fa22ec5d847214ab64299dcd748000000000000000000001e95bdef30921382746b34b01e8cdd1d2a80d2ab847f53b1639b116d691bcf2668389e6a5e3502179d376b15",
+        "anchorTxHex": "01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff00ffffffff0200000000000000002f6a2d504348310100068b9b140000030cfedbcc8f46d736876df6ca98f610b8e5ca9ba0f2aa87dbb02b2c6ed953996a00000000000000001976a914000000000000000000000000000000000000000088ac00000000"
+      }
+    }
+  ]
+}

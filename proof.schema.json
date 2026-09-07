@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/pitchain/v1/proof.schema.json",
+  "title": "PitchainExistenceProof v1",
+  "description": "Normative document format for protocol pitchain/1 (SPEC.md §6). Unknown fields MUST be ignored by verifiers.",
+  "type": "object",
+  "required": ["type", "version", "evidence", "leaf", "tree", "batch", "anchor"],
+  "properties": {
+    "@context": { "const": "https://w3id.org/pitchain/v1" },
+    "type": { "const": "PitchainExistenceProof" },
+    "version": { "const": 1 },
+    "issuedAt": { "type": "string", "format": "date-time" },
+    "evidence": {
+      "type": "object",
+      "required": ["hash", "hashAlg"],
+      "properties": {
+        "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "hashAlg": { "const": "sha256" },
+        "label": { "type": "string", "maxLength": 512 },
+        "submittedAt": { "type": "string", "format": "date-time" },
+        "hashComputedBy": { "enum": ["client", "service"] }
+      }
+    },
+    "leaf": {
+      "type": "object",
+      "required": ["index", "paddingRule"],
+      "properties": {
+        "index": { "type": "integer", "minimum": 0 },
+        "paddingRule": { "const": "dup-last-v1" }
+      }
+    },
+    "tree": {
+      "type": "object",
+      "required": ["leafCount", "path", "root"],
+      "properties": {
+        "leafCount": { "type": "integer", "minimum": 1 },
+        "path": { "type": "array", "items": { "type": "string", "pattern": "^[0-9a-f]{64}$" } },
+        "root": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "batch": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^(0|[1-9][0-9]{0,19})$" },
+        "closedAt": { "type": "string", "format": "date-time" },
+        "chainedRoot": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "anchor": {
+      "type": "object",
+      "required": ["network", "txid", "vout", "payload"],
+      "properties": {
+        "network": { "enum": ["bitcoin", "testnet4", "signet"] },
+        "txid": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "vout": { "type": "integer", "minimum": 0 },
+        "payload": { "type": "string", "pattern": "^5043483101[0-9a-f]{80}$", "description": "45B PCH1 payload hex (SPEC §5)" },
+        "blockHash": { "type": "string", "pattern": "^0000[0-9a-f]{60}$" },
+        "height": { "type": "integer", "minimum": 0 },
+        "merkleBranch": { "type": "array", "items": { "type": "string", "pattern": "^[0-9a-f]{64}$" } },
+        "position": { "type": "integer", "minimum": 0 },
+        "confirmationsAtIssue": { "type": "integer", "minimum": 0 },
+        "mtp": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

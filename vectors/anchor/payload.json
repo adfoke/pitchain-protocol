@@ -1,0 +1,25 @@
+{
+  "id": "anchor-payload",
+  "magic": "50434831",
+  "version": 1,
+  "cases": [
+    {
+      "batchId": "0",
+      "root": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "payload": "50434831010000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "roundTrip": true
+    },
+    {
+      "batchId": "1842348032000007",
+      "root": "9e784f46931286718e4b456b2bd546ab2eff2f1254779c4e1b5cc7c0dea9de62",
+      "payload": "504348310100068b9b140000079e784f46931286718e4b456b2bd546ab2eff2f1254779c4e1b5cc7c0dea9de62",
+      "roundTrip": true
+    },
+    {
+      "batchId": "18446744073709551615",
+      "root": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "payload": "5043483101ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "roundTrip": true
+    }
+  ]
+}

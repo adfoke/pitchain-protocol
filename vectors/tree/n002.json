@@ -1,0 +1,37 @@
+{
+  "id": "tree-n2",
+  "leafCount": 2,
+  "paddingRule": "dup-last-v1",
+  "tagLeaf": "68f9c79041f1ddd54806a8d5676ea17c67dab780bf1221925d24bab6481049a8",
+  "tagNode": "e36f84ec1034ff111382d4a9bf68c7ca25bded6894414c2ad0e1dec69f8fa5cf",
+  "tagPrev": "85bf41d83d04c98c7f3b7850f82eaf9e3abec954fdcba7935d525a99e0948284",
+  "items": [
+    {
+      "src": "pitchain-vector-item-0",
+      "dataHash": "05bde784fcf484970ee3af1115b10e94c840197c7237fb500835ab7cb1297156",
+      "leaf": "a7e4873034ace43cbb8a33c05c6f37828617b585a313d86a4a271f9aa6bad4f5"
+    },
+    {
+      "src": "pitchain-vector-item-1",
+      "dataHash": "3cb6b3a42ae9a906b4b1cfe3aad294b14f5b7d75ca1c442df5719e8b5063c85c",
+      "leaf": "93a27a4abae9bec759fef01eca7ae2a058a28c6b6efbcb5d14f773ba1958bc48"
+    }
+  ],
+  "root": "dd8890d07c51a56782c876585e5ad389ac664f74db7c70277aff52dc501a4bc3",
+  "proofs": [
+    {
+      "index": 0,
+      "path": [
+        "93a27a4abae9bec759fef01eca7ae2a058a28c6b6efbcb5d14f773ba1958bc48"
+      ],
+      "root": "dd8890d07c51a56782c876585e5ad389ac664f74db7c70277aff52dc501a4bc3"
+    },
+    {
+      "index": 1,
+      "path": [
+        "a7e4873034ace43cbb8a33c05c6f37828617b585a313d86a4a271f9aa6bad4f5"
+      ],
+      "root": "dd8890d07c51a56782c876585e5ad389ac664f74db7c70277aff52dc501a4bc3"
+    }
+  ]
+}

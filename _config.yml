@@ -1,0 +1,14 @@
+remote_theme: just-the-docs/just-the-docs
+title: Pitchain Existence Proof Protocol
+description: Open standard for Bitcoin-anchored existence proofs (pitchain/1)
+baseurl: "/pitchain-protocol"
+url: "https://adfoke.github.io"
+aux_links:
+  "GitHub: adfoke/pitchain-protocol":
+    - "https://github.com/adfoke/pitchain-protocol"
+  "Service: pitchain.dev":
+    - "https://pitchain.dev"
+color_scheme: light
+search_enabled: true
+heading_anchors: true
+callouts_level: quiet
